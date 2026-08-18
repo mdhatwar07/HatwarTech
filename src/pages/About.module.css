@@ -1,0 +1,168 @@
+.section {
+  padding-block: 56px;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.beliefText {
+  font-size: 1.02rem;
+}
+
+.introVisual {
+  position: relative;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-hero);
+  overflow: hidden;
+}
+
+.introWave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 2px solid var(--color-border);
+}
+
+.stepNumber {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  letter-spacing: 0.05em;
+}
+
+.processRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.processRow::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-border) 0,
+    var(--color-border) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  z-index: 0;
+}
+
+.processStep {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.processStep h3 {
+  font-size: 1.02rem;
+}
+
+.processStep p {
+  font-size: 0.88rem;
+}
+
+.processIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.capabilityCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.capabilityCard h3 {
+  font-size: 1.05rem;
+}
+
+.capabilityCard p {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 1024px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .introVisual {
+    height: 220px;
+    order: -1;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .principlesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .processRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .processRow::before {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+  }
+}

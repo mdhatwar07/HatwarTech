@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.center {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  color: var(--color-text-primary);
+}
+
+.titleOnDark {
+  color: var(--color-white);
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+}
+
+.descriptionOnDark {
+  font-size: 1.05rem;
+  color: var(--color-text-on-dark-muted);
+}

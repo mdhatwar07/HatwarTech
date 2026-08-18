@@ -1,0 +1,162 @@
+.hero {
+  position: relative;
+  background: var(--gradient-hero);
+  padding-top: var(--header-height);
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding-block: 52px 44px;
+}
+
+.homeSection {
+  padding-block: 64px;
+}
+
+.homeSectionAlt {
+  background: var(--color-bg-light);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 540px;
+}
+
+.heroTitle {
+  color: var(--color-white);
+}
+
+.highlight {
+  background: linear-gradient(120deg, #6c8cff, #a68bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-on-dark-muted);
+  max-width: 480px;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.heroVisual {
+  position: relative;
+  height: 100%;
+  min-height: 320px;
+}
+
+.heroWave {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+  width: 130%;
+  max-width: none;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.combinedRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.insightsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.insightsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.insightsTitle {
+  margin-top: 10px;
+}
+
+.viewAllLink {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-blue);
+  white-space: nowrap;
+}
+
+.insightGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ctaCol {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .heroVisual {
+    min-height: 260px;
+    order: -1;
+  }
+
+  .heroWave {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .combinedRow {
+    grid-template-columns: 1fr;
+  }
+
+  .insightGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroActions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .insightsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

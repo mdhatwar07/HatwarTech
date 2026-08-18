@@ -1,0 +1,42 @@
+.hero {
+  background: var(--gradient-hero);
+  padding-top: calc(var(--header-height) + 56px);
+  padding-bottom: 56px;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 720px;
+}
+
+.title {
+  color: var(--color-white);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-on-dark-muted);
+}
+
+.body {
+  max-width: 720px;
+  padding-block: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.body p {
+  font-size: 1.08rem;
+}
+
+.back {
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--color-blue);
+}
