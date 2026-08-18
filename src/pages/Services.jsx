@@ -19,34 +19,35 @@ export default function Services() {
       <PageHero
         eyebrow="Services"
         title="End-to-end solutions that drive business impact."
-        description="We combine product thinking, data intelligence, AI and technology to help you build, grow and transform."
+        description="We combine product thinking, data intelligence, AI and technology to help businesses solve meaningful problems and build practical solutions."
       />
 
-      <section className={styles.section}>
+      <section className="section">
         <div className={`container ${styles.list}`}>
           {services.map((service, i) => (
             <Reveal
               key={service.slug}
               id={service.slug}
-              className={styles.row}
-              style={{ transitionDelay: `${i * 60}ms` }}
+              className={`${styles.row} ${i % 2 === 1 ? styles.rowReverse : ""}`}
             >
-              <span className={styles.iconWrap}>
-                <Icon name={service.icon} size={24} />
-              </span>
+              <div className={styles.iconCol}>
+                <div className={styles.iconWrap}>
+                  <Icon name={service.icon} size={30} />
+                </div>
+              </div>
               <div className={styles.content}>
+                <span className={styles.index}>{String(i + 1).padStart(2, "0")}</span>
                 <h2 className={styles.title}>{service.title}</h2>
                 <p className={styles.summary}>{service.summary}</p>
+                <ul className={styles.capabilities}>
+                  {service.capabilities.map((item) => (
+                    <li key={item}>
+                      <Icon name="check" size={16} strokeWidth={2.4} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className={styles.capabilities}>
-                {service.capabilities.map((item) => (
-                  <li key={item}>
-                    <Icon name="check" size={14} strokeWidth={2.4} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Icon name="arrowRight" size={18} strokeWidth={2} className={styles.rowArrow} />
             </Reveal>
           ))}
         </div>

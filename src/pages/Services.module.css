@@ -1,125 +1,95 @@
-.section {
-  padding-block: 56px;
-}
-
 .list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 96px;
 }
 
 .row {
   display: grid;
-  grid-template-columns: 56px 1fr 1.15fr 20px;
-  align-items: center;
-  gap: 28px;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 32px;
+  grid-template-columns: 260px 1fr;
+  gap: 56px;
+  align-items: start;
   scroll-margin-top: calc(var(--header-height) + 24px);
-  transition: box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-.row:hover {
-  box-shadow: var(--shadow-md);
-  border-color: rgba(49, 91, 255, 0.2);
+.rowReverse {
+  direction: rtl;
+}
+
+.rowReverse > * {
+  direction: ltr;
+}
+
+.iconCol {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
 }
 
 .iconWrap {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: rgba(49, 91, 255, 0.1);
-  color: var(--color-blue);
-  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-hero);
+  color: var(--color-white);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 14px;
+}
+
+.index {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  letter-spacing: 0.05em;
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
 }
 
 .summary {
-  font-size: 0.92rem;
+  font-size: 1.05rem;
+  max-width: 560px;
 }
 
 .capabilities {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px 20px;
-  border-left: 1px solid var(--color-border);
-  padding-left: 28px;
+  gap: 12px 24px;
+  margin-top: 12px;
+  max-width: 640px;
 }
 
 .capabilities li {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 0.85rem;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
 }
 
-.capabilities li svg {
+.capabilities svg {
   flex-shrink: 0;
-  margin-top: 3px;
   color: var(--color-blue);
 }
 
-.rowArrow {
-  color: var(--color-text-muted);
-  justify-self: end;
-  transition: transform var(--transition-fast), color var(--transition-fast);
-}
-
-.row:hover .rowArrow {
-  transform: translateX(3px);
-  color: var(--color-blue);
-}
-
-@media (max-width: 900px) {
+@media (max-width: 780px) {
   .row {
-    grid-template-columns: 48px 1fr;
-    grid-template-areas:
-      "icon content"
-      "caps caps";
-    padding: 24px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .iconWrap {
-    grid-area: icon;
-    width: 44px;
-    height: 44px;
+  .iconCol {
+    justify-content: flex-start;
   }
 
-  .content {
-    grid-area: content;
-  }
-
-  .capabilities {
-    grid-area: caps;
-    grid-template-columns: repeat(2, 1fr);
-    border-left: none;
-    border-top: 1px solid var(--color-border);
-    padding-left: 0;
-    padding-top: 16px;
-    margin-top: 4px;
-  }
-
-  .rowArrow {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
   .capabilities {
     grid-template-columns: 1fr;
   }
