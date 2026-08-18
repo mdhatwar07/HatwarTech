@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "../ui/Icon";
+import { insightTypeLabels } from "../../data/insights";
 import styles from "./InsightCard.module.css";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
@@ -11,6 +12,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 export function InsightCard({
   slug,
   category,
+  type,
   title,
   excerpt,
   date,
@@ -26,7 +28,12 @@ export function InsightCard({
     >
       <div className={styles.visual} aria-hidden="true" />
       <div className={styles.body}>
-        {!isCompact && <span className={styles.category}>{category}</span>}
+        {!isCompact && (
+          <div className={styles.badgeRow}>
+            <span className={styles.category}>{category}</span>
+            {type && <span className={styles.typeTag}>{insightTypeLabels[type] ?? type}</span>}
+          </div>
+        )}
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.excerpt}>{excerpt}</p>
         <div className={styles.meta}>

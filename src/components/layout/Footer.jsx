@@ -12,15 +12,18 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.about}>
-          <span className={styles.brand}>Hatwar Tech</span>
+          <span className={styles.brand}>{company.name}</span>
           <p className={styles.tagline}>{company.positioning}</p>
+          <span className={styles.builtBy}>
+            Built by <Link to="/about">{company.founder.name}</Link>
+          </span>
           {company.linkedin && company.linkedin !== "#" && (
             <a
               href={company.linkedin}
               target="_blank"
               rel="noreferrer noopener"
               className={styles.social}
-              aria-label="Hatwar Tech on LinkedIn"
+              aria-label={`${company.name} on LinkedIn`}
             >
               <Icon name="linkedin" size={18} />
             </a>
@@ -56,14 +59,14 @@ export function Footer() {
               <a href={`mailto:${company.email}`}>{company.email}</a>
             </li>
             <li>
-              <Link to="/contact">Start a Conversation</Link>
+              <Link to="/contact">Let&rsquo;s Talk</Link>
             </li>
           </ul>
         </div>
       </div>
 
       <div className={`container ${styles.bottom}`}>
-        <span>&copy; {year} Hatwar Tech. All rights reserved.</span>
+        <span>&copy; {year} {company.name}. All rights reserved.</span>
         <div className={styles.legal}>
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/terms">Terms</Link>

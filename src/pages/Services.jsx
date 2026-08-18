@@ -10,16 +10,16 @@ export default function Services() {
   useSEO({
     title: "Services",
     description:
-      "End-to-end product strategy, data & analytics, AI & automation, and digital product services from Hatwartech.",
+      "Selected product & business, data & analytics, AI & automation and digital solutions work from HatwarTech.",
     path: "/services",
   });
 
   return (
     <>
       <PageHero
-        eyebrow="Services"
-        title="End-to-end solutions that drive business impact."
-        description="We combine product thinking, data intelligence, AI and technology to help businesses solve meaningful problems and build practical solutions."
+        eyebrow="How I Can Help"
+        title="Selected product, data, AI and technology work."
+        description="I work on a small number of problems at a time, combining product thinking, data and AI to help businesses build practical solutions."
       />
 
       <section className="section">
@@ -54,9 +54,9 @@ export default function Services() {
       </section>
 
       <CTASection
-        title="Ready to build something impactful?"
-        description="Let's discuss your goals and explore how we can help you turn ideas into measurable outcomes."
-        ctaLabel="Start a Conversation"
+        title="Have an idea, workflow or business challenge worth exploring?"
+        description="Let's discuss whether I can help."
+        ctaLabel="Let's Talk"
         ctaTo="/contact"
       />
     </>

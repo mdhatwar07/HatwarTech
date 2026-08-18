@@ -9,9 +9,9 @@ import styles from "./Work.module.css";
 
 export default function Work() {
   useSEO({
-    title: "Work",
+    title: "Work & Experiments",
     description:
-      "Internal projects, research and prototypes from Hatwartech exploring AI, data, digital products and strategy.",
+      "Products, prototypes, experiments and research from HatwarTech, exploring AI, data and digital products.",
     path: "/work",
   });
 
@@ -28,9 +28,9 @@ export default function Work() {
   return (
     <>
       <PageHero
-        eyebrow="Our Work"
-        title="Selected projects that solve real problems."
-        description="A collection of internal projects and prototypes exploring how product thinking, data and AI translate into practical solutions."
+        eyebrow="Work & Experiments"
+        title="Things I'm building, exploring and studying."
+        description="A collection of products, projects, prototypes, experiments, research and case studies."
       />
 
       <section className={styles.section}>
@@ -67,8 +67,8 @@ export default function Work() {
 
       <CTASection
         compact
-        title="Want to achieve similar results?"
-        description="Let's discuss how we can help you solve your biggest challenges."
+        title="Have an idea worth exploring?"
+        description="Let's discuss whether I can help you solve it."
         ctaLabel="Let's Talk"
         ctaTo="/contact"
       />

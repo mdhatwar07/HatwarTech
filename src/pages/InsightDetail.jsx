@@ -1,5 +1,5 @@
 import { Navigate, useParams, Link } from "react-router-dom";
-import { insights } from "../data/insights";
+import { insights, insightTypeLabels } from "../data/insights";
 import { insightContent } from "../data/insightContent";
 import { CTASection } from "../components/ui/CTASection";
 import { Badge } from "../components/ui/Badge";
@@ -33,7 +33,12 @@ export default function InsightDetail() {
       <article>
         <header className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
-            <Badge onDark>{insight.category}</Badge>
+            <div className={styles.badgeRow}>
+              <Badge onDark>{insight.category}</Badge>
+              {insight.type && (
+                <span className={styles.typeTag}>{insightTypeLabels[insight.type] ?? insight.type}</span>
+              )}
+            </div>
             <h1 className={styles.title}>{insight.title}</h1>
             <div className={styles.meta}>
               <time dateTime={insight.date}>{dateFormatter.format(new Date(insight.date))}</time>
@@ -54,9 +59,9 @@ export default function InsightDetail() {
       </article>
 
       <CTASection
-        title="Have a problem worth solving?"
-        description="Let's explore how product thinking, data and AI can turn it into measurable business impact."
-        ctaLabel="Start a Conversation"
+        title="Have an idea or problem worth exploring?"
+        description="Let's discuss whether I can help — with the thinking, the build, or both."
+        ctaLabel="Let's Talk"
         ctaTo="/contact"
       />
     </>

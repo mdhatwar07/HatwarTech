@@ -5,7 +5,7 @@ import styles from "./Legal.module.css";
 export function PrivacyPolicy() {
   useSEO({
     title: "Privacy Policy",
-    description: "How Hatwartech handles information collected through this website.",
+    description: "How HatwarTech handles information collected through this website.",
     path: "/privacy",
   });
 
@@ -28,7 +28,7 @@ export function PrivacyPolicy() {
 export function Terms() {
   useSEO({
     title: "Terms",
-    description: "Terms of use for the Hatwartech website.",
+    description: "Terms of use for the HatwarTech website.",
     path: "/terms",
   });
 

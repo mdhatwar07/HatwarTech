@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_NAME = "Hatwar Tech";
+const SITE_NAME = "HatwarTech";
 const SITE_URL = "https://hatwartech.com";
 
 function setMetaTag(attr, key, content) {

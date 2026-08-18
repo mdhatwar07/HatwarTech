@@ -11,6 +11,24 @@
   max-width: 720px;
 }
 
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.typeTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-on-dark-muted);
+  border: 1px solid var(--color-border-on-dark);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+}
+
 .title {
   color: var(--color-white);
 }

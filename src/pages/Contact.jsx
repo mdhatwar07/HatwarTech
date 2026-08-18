@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { PageHero } from "../components/ui/PageHero";
 import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
 import { Icon } from "../components/ui/Icon";
 import { company } from "../data/company";
 import { useSEO } from "../lib/useSEO";
@@ -10,9 +10,9 @@ const initialForm = { name: "", email: "", company: "", message: "" };
 
 export default function Contact() {
   useSEO({
-    title: "Contact",
+    title: "Let's Talk",
     description:
-      "Get in touch with Hatwartech to explore how product thinking, data and AI can turn your idea into measurable business impact.",
+      "Have an idea, problem or opportunity you'd like to explore? Get in touch with HatwarTech to start a conversation.",
     path: "/contact",
   });
 
@@ -34,26 +34,19 @@ export default function Contact() {
 
   return (
     <>
-      <section className={styles.headerSection}>
-        <div className={`container ${styles.headerInner}`}>
-          <Badge>Contact Us</Badge>
-          <h1 className={styles.headerTitle}>
-            Let&rsquo;s build something meaningful together.
-          </h1>
-          <p className={styles.headerText}>
-            Have a project in mind or want to explore an idea? We&rsquo;d love
-            to hear from you.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Let's Talk"
+        title="Have an idea, problem or opportunity you'd like to explore?"
+        description="Let's start with a conversation and see whether there's a useful way to work together — commercial work, a product collaboration, a research idea, or anything in between."
+      />
 
       <section className={styles.section}>
         <div className={`container ${styles.grid}`}>
           <div className={styles.info}>
             <h2 className={styles.infoTitle}>Get in touch</h2>
             <p className={styles.infoText}>
-              Reach out directly, or send a message using the form and we'll
-              respond as soon as we can.
+              Reach out directly, or send a message using the form and I'll
+              respond as soon as I can.
             </p>
 
             <ul className={styles.infoList}>
@@ -74,7 +67,7 @@ export default function Contact() {
                   <div>
                     <span className={styles.infoLabel}>LinkedIn</span>
                     <a href={company.linkedin} target="_blank" rel="noreferrer noopener">
-                      Hatwar Tech
+                      HatwarTech
                     </a>
                   </div>
                 </li>

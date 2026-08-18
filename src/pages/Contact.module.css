@@ -1,26 +1,5 @@
-.headerSection {
-  padding-top: calc(var(--header-height) + 48px);
-  padding-bottom: 16px;
-}
-
-.headerInner {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 620px;
-}
-
-.headerTitle {
-  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
-}
-
-.headerText {
-  font-size: 1rem;
-  max-width: 520px;
-}
-
 .section {
-  padding-block: 48px 64px;
+  padding-block: 56px;
 }
 
 .grid {

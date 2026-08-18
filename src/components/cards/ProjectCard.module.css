@@ -46,12 +46,17 @@
   flex-grow: 1;
 }
 
-.type {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+.status {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-blue);
+  background: rgba(49, 91, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 2px;
 }
 
 .title {

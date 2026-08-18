@@ -1,12 +1,18 @@
-// TODO: replace placeholder contact details with confirmed Hatwartech business
+// TODO: replace placeholder contact details with confirmed HatwarTech business
 // info before launch (email, LinkedIn, phone/location if applicable).
 export const company = {
-  name: "Hatwar Tech",
-  legalName: "Hatwar Tech",
+  name: "HatwarTech",
+  legalName: "HatwarTech",
   tagline: "Product • Data • AI • Technology",
+  supportingTagline: "Build • Explore • Publish • Advise",
   positioning:
-    "Hatwartech helps businesses turn ideas, data and AI into practical digital products, intelligent solutions and measurable business outcomes.",
+    "HatwarTech is my independent technology platform where I build digital products, explore ideas, publish research and help businesses solve practical problems with technology.",
   email: "hello@hatwartech.com",
   linkedin: "#",
   founded: 2024,
+  founder: {
+    name: "Mayur Hatwar",
+    role: "Technical Product Manager at Optum India",
+    photo: "/images/mayur-hatwar.png",
+  },
 };

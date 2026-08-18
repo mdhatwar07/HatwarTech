@@ -7,10 +7,23 @@ export const insightCategories = [
   "Technology",
 ];
 
+// Content type — separate from topic category. Supports future additions
+// (blog, whitepaper, research, case-study, analysis) without new components.
+export const insightTypeLabels = {
+  article: "Article",
+  blog: "Blog",
+  whitepaper: "White Paper",
+  research: "Research",
+  "case-study": "Case Study",
+  analysis: "Analysis",
+  opinion: "Opinion",
+};
+
 export const insights = [
   {
     slug: "does-your-product-really-need-ai",
     category: "AI & Automation",
+    type: "opinion",
     title: "Does Your Product Really Need AI?",
     excerpt:
       "Before reaching for a model, it's worth asking what problem you're actually solving. A practical look at when AI adds real value — and when simpler tools do the job better.",
@@ -20,6 +33,7 @@ export const insights = [
   {
     slug: "framework-to-prioritize-ai-use-cases",
     category: "Strategy",
+    type: "article",
     title: "A Simple Framework to Prioritize AI Use Cases",
     excerpt:
       "Most teams have more AI ideas than they can execute. Here's a lightweight framework for scoring use cases on impact, feasibility and data readiness.",
@@ -29,6 +43,7 @@ export const insights = [
   {
     slug: "turning-data-into-decisions",
     category: "Data & Analytics",
+    type: "article",
     title: "Turning Data Into Decisions, Not Just Dashboards",
     excerpt:
       "Dashboards are easy to build and easy to ignore. A look at what it actually takes to make data part of how decisions get made.",
@@ -38,6 +53,7 @@ export const insights = [
   {
     slug: "product-strategy-before-roadmap",
     category: "Product",
+    type: "opinion",
     title: "Why Product Strategy Should Come Before the Roadmap",
     excerpt:
       "Roadmaps are a planning tool, not a strategy. Getting the sequence right changes how teams prioritize and ship.",

@@ -36,40 +36,28 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-}
-
-.brandMark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: 1.5px solid var(--color-navy-deep);
-  color: var(--color-navy-deep);
   flex-shrink: 0;
 }
 
-.brandText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+/* The source logo file has a lot of baked-in white margin around the mark;
+   this frame crops tightly to the visible content (icon + wordmark +
+   "DATA · INSIGHTS · PRODUCTS" subtitle) so it reads clearly at header
+   size instead of shrinking into empty padding. */
+.logoFrame {
+  position: relative;
+  display: block;
+  width: 316px;
+  height: 64px;
+  overflow: hidden;
 }
 
-.brandName {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--color-text-primary);
-}
-
-.brandSub {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+.logo {
+  position: absolute;
+  top: -73px;
+  left: -56px;
+  width: 433px;
+  height: 217px;
+  max-width: none;
 }
 
 .nav ul {

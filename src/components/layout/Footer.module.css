@@ -30,6 +30,20 @@
   color: var(--color-text-on-dark-muted);
 }
 
+.builtBy {
+  font-size: 0.82rem;
+  color: var(--color-text-on-dark-muted);
+}
+
+.builtBy a {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.builtBy a:hover {
+  color: var(--color-blue);
+}
+
 .social {
   display: inline-flex;
   align-items: center;

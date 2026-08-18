@@ -10,7 +10,7 @@ export default function Insights() {
   useSEO({
     title: "Insights",
     description:
-      "Perspectives on product strategy, data, AI, technology and building impactful solutions from Hatwartech.",
+      "Perspectives on product strategy, data, AI, technology and building impactful solutions from HatwarTech.",
     path: "/insights",
   });
 

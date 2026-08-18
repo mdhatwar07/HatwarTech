@@ -28,12 +28,14 @@ export function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.brand} onClick={() => setMenuOpen(false)}>
-          <span className={styles.brandMark}>
-            <Icon name="chip" size={22} strokeWidth={1.6} />
-          </span>
-          <span className={styles.brandText}>
-            <span className={styles.brandName}>HATWAR TECH</span>
-            <span className={styles.brandSub}>Consulting &amp; AI Solutions</span>
+          <span className={styles.logoFrame}>
+            <img
+              className={styles.logo}
+              src="/images/hatwartech-logo.png"
+              alt={company.name}
+              width="1774"
+              height="887"
+            />
           </span>
         </NavLink>
 
