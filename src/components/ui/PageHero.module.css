@@ -1,8 +1,8 @@
 .hero {
   position: relative;
   background: var(--gradient-hero);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 42px;
+  padding-bottom: 35px;
   overflow: hidden;
 }
 
