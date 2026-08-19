@@ -1,8 +1,8 @@
 .body {
-  max-width: 680px;
   padding-block: 56px;
 }
 
 .body p {
+  max-width: 680px;
   font-size: 1.02rem;
 }
