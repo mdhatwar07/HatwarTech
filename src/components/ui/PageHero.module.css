@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   background: var(--gradient-hero);
-  padding-top: calc(var(--header-height) + 40px);
+  padding-top: 40px;
   padding-bottom: 40px;
   overflow: hidden;
 }

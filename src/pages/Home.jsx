@@ -29,9 +29,9 @@ export default function Home() {
           <div className={styles.heroContent}>
             <Badge onDark>Product • Data • AI • Technology</Badge>
             <h1 className={styles.heroTitle}>
-              I <span className={styles.highlight}>build</span>,{" "}
-              <span className={styles.highlight}>explore</span> and{" "}
-              <span className={styles.highlight}>share ideas</span> at the
+              I <span className={styles.highlight}>Build</span>,{" "}
+              <span className={styles.highlight}>Explore</span> and{" "}
+              <span className={styles.highlight}>Share Ideas</span> at the
               intersection of product, data and AI.
             </h1>
             <p className={styles.heroSubtitle}>
