@@ -13,6 +13,7 @@ RewriteCond %{REQUEST_URI} !^/admin
 RewriteCond %{REQUEST_URI} !^/api
 RewriteCond %{REQUEST_URI} !^/health
 RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+RewriteCond %{REQUEST_URI} !^/images/
 RewriteRule ^ - [E=MAINTENANCE_ACTIVE:1,R=503,L]
 
 <IfModule mod_headers.c>
