@@ -12,7 +12,7 @@ export const company = {
   founded: 2024,
   founder: {
     name: "Mayur Hatwar",
-    role: "Technical Product Manager at Optum India",
+    role: "Technical Product Manager",
     photo: "/images/mayur-hatwar.png",
   },
 };
