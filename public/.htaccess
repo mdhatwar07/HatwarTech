@@ -1,5 +1,27 @@
 Options -MultiViews
 RewriteEngine On
+
+# --- Maintenance mode ---------------------------------------------------
+# Set to "true" to take the public site offline with a 503 response.
+# /admin, /api and /health are pre-exempted so a future CMS/backend can
+# keep operating while the public site is down. Neither path exists yet;
+# this only reserves the exemption for when they do.
+SetEnv MAINTENANCE_MODE false
+
+RewriteCond %{ENV:MAINTENANCE_MODE} ^true$
+RewriteCond %{REQUEST_URI} !^/admin
+RewriteCond %{REQUEST_URI} !^/api
+RewriteCond %{REQUEST_URI} !^/health
+RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+RewriteRule ^ - [E=MAINTENANCE_ACTIVE:1,R=503,L]
+
+<IfModule mod_headers.c>
+  Header always set Retry-After "3600" env=MAINTENANCE_ACTIVE
+</IfModule>
+
+ErrorDocument 503 /maintenance.html
+# -------------------------------------------------------------------------
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [QSA,L]
