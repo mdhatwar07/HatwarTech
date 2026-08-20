@@ -6,7 +6,7 @@ RewriteEngine On
 # /admin, /api and /health are pre-exempted so a future CMS/backend can
 # keep operating while the public site is down. Neither path exists yet;
 # this only reserves the exemption for when they do.
-SetEnv MAINTENANCE_MODE false
+SetEnv MAINTENANCE_MODE true
 
 RewriteCond %{ENV:MAINTENANCE_MODE} ^true$
 RewriteCond %{REQUEST_URI} !^/admin
