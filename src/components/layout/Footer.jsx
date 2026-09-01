@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "../ui/Icon";
 import { navLinks } from "../../data/navigation";
-import { services } from "../../data/services";
 import { company } from "../../data/company";
 import styles from "./Footer.module.css";
 
@@ -42,24 +41,21 @@ export function Footer() {
         </div>
 
         <div className={styles.column}>
-          <h3 className={styles.heading}>Services</h3>
-          <ul>
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link to="/services">{service.title}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={styles.column}>
           <h3 className={styles.heading}>Let&rsquo;s Connect</h3>
           <ul>
             <li>
               <a href={`mailto:${company.email}`}>{company.email}</a>
             </li>
             <li>
-              <Link to="/contact">Let&rsquo;s Talk</Link>
+              <a href={`mailto:${company.gmail}`}>{company.gmail}</a>
+            </li>
+            <li>
+              <a href={company.linkedin} target="_blank" rel="noreferrer noopener">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

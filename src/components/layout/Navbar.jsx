@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Button } from "../ui/Button";
 import { Icon } from "../ui/Icon";
 import { navLinks } from "../../data/navigation";
 import { company } from "../../data/company";
@@ -58,9 +57,6 @@ export function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <Button to="/contact" variant="primary" className={styles.cta}>
-            Let&rsquo;s Talk
-          </Button>
           <button
             type="button"
             className={styles.menuToggle}
@@ -94,9 +90,6 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-        <Button to="/contact" variant="primary" fullWidth onClick={() => setMenuOpen(false)}>
-          Let&rsquo;s Talk
-        </Button>
         <a href={`mailto:${company.email}`} className={styles.mobileEmail}>
           {company.email}
         </a>

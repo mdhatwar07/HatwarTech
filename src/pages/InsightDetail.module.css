@@ -53,6 +53,73 @@
   font-size: 1.08rem;
 }
 
+.viewToggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.viewButton,
+.viewActive {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.viewActive {
+  background: var(--color-white);
+  color: var(--color-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.blockHeading {
+  max-width: 720px;
+  font-size: 1.4rem;
+  margin-top: 8px;
+}
+
+.callout {
+  max-width: 720px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  padding: 16px 20px;
+  border-left: 3px solid var(--color-blue);
+  background: var(--color-bg-light);
+  border-radius: var(--radius-sm);
+}
+
+.list {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listTitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 20px;
+}
+
+.list li {
+  font-size: 1.02rem;
+  color: var(--color-text-secondary);
+}
+
 .back {
   margin-top: 16px;
   font-weight: 600;

@@ -7,8 +7,9 @@ export const company = {
   supportingTagline: "Build • Explore • Publish • Advise",
   positioning:
     "HatwarTech is my independent technology platform where I build digital products, explore ideas, publish research and help businesses solve practical problems with technology.",
-  email: "hello@hatwartech.com",
-  linkedin: "#",
+  email: "mayur@hatwartech.com",
+  gmail: "hatwartech@gmail.com",
+  linkedin: "https://www.linkedin.com/in/mayur-hatwar/",
   founded: 2024,
   founder: {
     name: "Mayur Hatwar",

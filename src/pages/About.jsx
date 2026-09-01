@@ -26,8 +26,8 @@ const buildingAreas = [
   },
   {
     icon: "compass",
-    title: "Solutions",
-    description: "Selected commercial consulting, advisory and technology work.",
+    title: "Technology",
+    description: "Practical solutions that connect product, data and AI to real problems.",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function About() {
       </section>
 
       <section className={`${styles.section} section--alt`}>
-        <div className="container">
+        <div className={`container ${styles.journeyGrid}`}>
           <Reveal>
             <SectionHeader eyebrow="My Journey" title="From data to products." />
             <p className={styles.beliefText}>
@@ -124,14 +124,29 @@ export default function About() {
               solutions that create real value.
             </p>
           </Reveal>
+          <Reveal className={styles.journeyPhotoWrap}>
+            <img
+              className={styles.journeyPhoto}
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+              alt="Data dashboard and analytics charts on a laptop screen"
+              loading="lazy"
+            />
+          </Reveal>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className={`container ${styles.whyGrid}`}>
+          <Reveal className={styles.introVisual}>
+            <HeroWave className={styles.introWave} />
+          </Reveal>
           <Reveal>
             <SectionHeader
-              eyebrow="Why HatwarTech?"
+              eyebrow={
+                <>
+                  Why <span className={styles.brandCase}>HatwarTech</span>?
+                </>
+              }
               title="More than a resume. More than a portfolio."
             />
             <p className={styles.beliefText}>
@@ -156,9 +171,6 @@ export default function About() {
               </strong>
             </p>
             <p className={styles.whyTagline}>Ideas. Intelligence. Impact.</p>
-          </Reveal>
-          <Reveal className={styles.introVisual}>
-            <HeroWave className={styles.introWave} />
           </Reveal>
         </div>
       </section>
@@ -223,31 +235,11 @@ export default function About() {
           <Reveal className={styles.independenceCard}>
             <h2 className={styles.independenceTitle}>Professional Independence</h2>
             <p>
-              HatwarTech is an independent personal and entrepreneurial
-              initiative that I develop alongside my professional
-              commitments.
-            </p>
-            <p>
-              I do not undertake projects, advisory engagements or other
-              commercial activities that could create an actual or potential
-              conflict of interest with my professional responsibilities.
-            </p>
-            <p>
-              I maintain strict confidentiality boundaries and do not
-              discuss, disclose, seek or use confidential, proprietary or
-              non-public information relating to my employer, its clients,
-              products, processes or business activities.
-            </p>
-            <p>
-              Commercial opportunities are considered selectively based on
-              relevance, scope, availability and potential conflicts of
+              HatwarTech is my personal space to explore ideas, technology,
+              products and emerging trends. I&rsquo;m open to meaningful
+              collaborations, while keeping clear boundaries with my
+              professional commitments and avoiding potential conflicts of
               interest.
-            </p>
-            <p className={styles.independenceNote}>
-              If you&rsquo;re considering working with HatwarTech, please
-              share only the high-level nature of the opportunity initially.
-              I can determine whether the engagement is appropriate before
-              any confidential or sensitive information is exchanged.
             </p>
           </Reveal>
         </div>

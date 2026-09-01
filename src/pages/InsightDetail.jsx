@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Navigate, useParams, Link } from "react-router-dom";
 import { insights, insightTypeLabels } from "../data/insights";
 import { insightContent } from "../data/insightContent";
+import { insightSlides } from "../data/insightSlides";
+import { InsightPresentation } from "../components/insights/InsightPresentation";
+import { InsightPdf } from "../components/insights/InsightPdf";
 import { CTASection } from "../components/ui/CTASection";
 import { Badge } from "../components/ui/Badge";
 import { useSEO } from "../lib/useSEO";
@@ -15,6 +19,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 export default function InsightDetail() {
   const { slug } = useParams();
   const insight = insights.find((item) => item.slug === slug);
+  const [view, setView] = useState("article");
 
   useSEO({
     title: insight ? insight.title : "Insight not found",
@@ -26,7 +31,9 @@ export default function InsightDetail() {
     return <Navigate to="/insights" replace />;
   }
 
-  const paragraphs = insightContent[slug] ?? [insight.excerpt];
+  const blocks = insightContent[slug] ?? [{ type: "p", text: insight.excerpt }];
+  const slides = insightSlides[slug];
+  const hasPresentation = Boolean(insight.pdf || slides);
 
   return (
     <>
@@ -49,9 +56,63 @@ export default function InsightDetail() {
         </header>
 
         <div className={`container ${styles.body}`}>
-          {paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
-          ))}
+          {hasPresentation && (
+            <div className={styles.viewToggle} role="group" aria-label="Choose article view">
+              <button
+                type="button"
+                className={view === "article" ? styles.viewActive : styles.viewButton}
+                onClick={() => setView("article")}
+              >
+                Article
+              </button>
+              <button
+                type="button"
+                className={view === "presentation" ? styles.viewActive : styles.viewButton}
+                onClick={() => setView("presentation")}
+              >
+                Presentation
+              </button>
+            </div>
+          )}
+
+          {view === "presentation" && hasPresentation ? (
+            insight.pdf ? (
+              <InsightPdf src={insight.pdf} title={insight.title} />
+            ) : (
+              <InsightPresentation slides={slides} />
+            )
+          ) : (
+            blocks.map((block, i) => {
+            const key = `${block.type}-${i}`;
+            if (block.type === "heading") {
+              return (
+                <h2 key={key} className={styles.blockHeading}>
+                  {block.text}
+                </h2>
+              );
+            }
+            if (block.type === "callout") {
+              return (
+                <p key={key} className={styles.callout}>
+                  {block.text}
+                </p>
+              );
+            }
+            if (block.type === "list") {
+              return (
+                <div key={key} className={styles.list}>
+                  {block.title && <h3 className={styles.listTitle}>{block.title}</h3>}
+                  <ul>
+                    {block.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            }
+              return <p key={key}>{block.text}</p>;
+            })
+          )}
           <Link to="/insights" className={styles.back}>
             ← Back to all insights
           </Link>

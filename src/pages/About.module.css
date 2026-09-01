@@ -5,6 +5,7 @@
 .beliefText {
   font-size: 1.02rem;
   max-width: 620px;
+  text-align: justify;
 }
 
 .beliefText + .beliefText {
@@ -50,12 +51,37 @@
   margin-bottom: 16px;
 }
 
-/* Section 3 — why HatwarTech */
-.whyGrid {
+/* Section 2 — my journey */
+.journeyGrid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
   align-items: center;
+}
+
+.journeyPhotoWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.journeyPhoto {
+  width: 100%;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+/* Section 3 — why HatwarTech */
+.whyGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.brandCase {
+  text-transform: none;
 }
 
 .whyList {
@@ -238,13 +264,22 @@
 
 @media (max-width: 1024px) {
   .introGrid,
+  .journeyGrid,
   .whyGrid {
     grid-template-columns: 1fr;
   }
 
+  .introVisual,
+  .journeyPhotoWrap {
+    order: -1;
+  }
+
   .introVisual {
     height: 220px;
-    order: -1;
+  }
+
+  .journeyPhoto {
+    height: 240px;
   }
 
   .buildingGrid {

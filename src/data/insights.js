@@ -7,6 +7,10 @@ export const insightCategories = [
   "Technology",
 ];
 
+// Optional `pdf` field per insight: path to a PDF under /public/presentations
+// (e.g. "/presentations/my-deck.pdf"). When set, the article page shows a
+// "Presentation" tab that embeds the PDF directly — no slide data needed.
+
 // Content type — separate from topic category. Supports future additions
 // (blog, whitepaper, research, case-study, analysis) without new components.
 export const insightTypeLabels = {

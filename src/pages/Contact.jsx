@@ -59,6 +59,17 @@ export default function Contact() {
                   <a href={`mailto:${company.email}`}>{company.email}</a>
                 </div>
               </li>
+              {company.gmail && (
+                <li>
+                  <span className={styles.infoIcon}>
+                    <Icon name="mail" size={18} />
+                  </span>
+                  <div>
+                    <span className={styles.infoLabel}>Gmail</span>
+                    <a href={`mailto:${company.gmail}`}>{company.gmail}</a>
+                  </div>
+                </li>
+              )}
               {company.linkedin && company.linkedin !== "#" && (
                 <li>
                   <span className={styles.infoIcon}>

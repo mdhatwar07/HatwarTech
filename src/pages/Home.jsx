@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import { Badge } from "../components/ui/Badge";
 import { Button } from "../components/ui/Button";
-import { SectionHeader } from "../components/ui/SectionHeader";
 import { CTACard } from "../components/ui/CTACard";
 import { HeroWave } from "../components/ui/HeroWave";
 import { Reveal } from "../components/ui/Reveal";
-import { ServiceCard } from "../components/cards/ServiceCard";
 import { ProjectCard } from "../components/cards/ProjectCard";
 import { InsightCard } from "../components/cards/InsightCard";
-import { services } from "../data/services";
 import { projects } from "../data/projects";
 import { insights } from "../data/insights";
 import { useSEO } from "../lib/useSEO";
@@ -16,9 +13,9 @@ import styles from "./Home.module.css";
 
 export default function Home() {
   useSEO({
-    title: "Product, Data & AI — Personal Technology Platform",
+    title: "Data, Technology, Products & AI — HatwarTech",
     description:
-      "HatwarTech is my personal technology and entrepreneurial platform — where I build products, explore ideas, publish insights and take on selected product, data and AI work.",
+      "HatwarTech is a founder-led technology platform where I build products, explore emerging technologies, share insights and document what I learn along the way.",
     path: "/",
   });
 
@@ -27,54 +24,30 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroContent}>
-            <Badge onDark>Product • Data • AI • Technology</Badge>
+            <Badge onDark>Data • Technology • Products • AI</Badge>
             <h1 className={styles.heroTitle}>
-              I <span className={styles.highlight}>Build</span>,{" "}
-              <span className={styles.highlight}>Explore</span> and{" "}
-              <span className={styles.highlight}>Share Ideas</span> at the
-              intersection of product, data and AI.
+              Building at the intersection of{" "}
+              <span className={styles.highlight}>Data</span>,{" "}
+              <span className={styles.highlight}>Technology</span>,{" "}
+              <span className={styles.highlight}>Products</span> &amp;{" "}
+              <span className={styles.highlight}>AI</span>.
             </h1>
             <p className={styles.heroSubtitle}>
-              HatwarTech is my personal technology and entrepreneurial
-              platform — where I build products, explore ideas, publish
-              insights and turn interesting problems into practical
-              solutions.
+              HatwarTech is a founder-led technology platform where I build
+              products, explore emerging technologies, share insights and
+              document what I learn along the way.
             </p>
             <div className={styles.heroActions}>
               <Button to="/work" variant="primary">
-                Explore My Work
+                Explore Projects
               </Button>
               <Button to="/contact" variant="onDark">
-                Let&rsquo;s Talk
+                Contact
               </Button>
             </div>
           </div>
           <div className={styles.heroVisual}>
             <HeroWave className={styles.heroWave} />
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.homeSection}>
-        <div className="container">
-          <Reveal>
-            <SectionHeader
-              eyebrow="What I Do"
-              title="Turning ideas and problems into practical solutions."
-              align="center"
-            />
-          </Reveal>
-          <div className={styles.serviceGrid}>
-            {services.map((service, i) => (
-              <Reveal key={service.slug} style={{ transitionDelay: `${i * 80}ms` }}>
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  summary={service.summary}
-                  to={`/services#${service.slug}`}
-                />
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
@@ -87,7 +60,7 @@ export default function Home() {
               <h2 className={styles.rowTitle}>Products, projects and experiments.</h2>
             </div>
             <Link to="/work" className={styles.viewAllLink}>
-              View all work →
+              View all projects →
             </Link>
           </div>
           <div className={styles.buildingGrid}>
@@ -123,9 +96,10 @@ export default function Home() {
             </div>
             <Reveal className={styles.ctaCol}>
               <CTACard
+                eyebrow="Get in Touch"
                 title="Have an idea or problem worth exploring?"
                 description="I take on selected product, data, AI and technology opportunities where I can add meaningful value."
-                ctaLabel="Let's Talk"
+                ctaLabel="Contact"
               />
             </Reveal>
           </div>
